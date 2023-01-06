@@ -1,27 +1,31 @@
 package com.person.test.dto;
 
-import com.person.test.entity.Endereco;
+import com.person.test.entity.Pessoa;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
-import java.util.Date;
-import java.util.List;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 
-public class PessoaDto {
+public class EnderecoDto {
 
     @NotBlank
-    private String nome;
+    private String lagradouro;
+
+    @NotBlank
+    private String cep;
 
     @NotNull
-    private Date dataNascimento;
+    private Integer numero;
 
-    private List<Endereco> enderecosList;
+    @NotBlank
+    private String cidade;
 
+    @NotNull
+    private Pessoa pessoaId;
 }

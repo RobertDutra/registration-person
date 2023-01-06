@@ -1,12 +1,12 @@
 package com.person.test.entity;
 
-import jakarta.persistence.*;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 
+import javax.persistence.*;
 import java.io.Serializable;
 
 @Data
@@ -35,8 +35,9 @@ public class Endereco implements Serializable{
     @Column(name = "cidade")
     private String cidade;
 
+    @JsonBackReference
     @ManyToOne
     @JoinColumn(name = "pessoa_id")
-    private Pessoa pessoa;
+    private Pessoa pessoaId;
 
 }

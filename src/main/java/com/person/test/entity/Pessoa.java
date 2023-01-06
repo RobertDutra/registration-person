@@ -1,16 +1,19 @@
 package com.person.test.entity;
 
-import jakarta.persistence.*;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 
+import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
-@Data
+@Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
@@ -29,6 +32,7 @@ public class Pessoa implements Serializable{
     @Column(name = "dataNascimento")
     private Date dataNascimento;
 
-    @OneToMany(mappedBy = "pessoa")
+    @JsonManagedReference
+    @OneToMany(mappedBy = "pessoaId")
     private List<Endereco> enderecosList;
 }
