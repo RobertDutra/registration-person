@@ -33,6 +33,6 @@ public class Pessoa implements Serializable{
     private Date dataNascimento;
 
     @JsonManagedReference
-    @OneToMany(mappedBy = "pessoaId")
+    @OneToMany(mappedBy = "pessoaId", cascade = CascadeType.ALL)
     private List<Endereco> enderecosList;
 }

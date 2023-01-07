@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 
 @Data
@@ -39,5 +40,10 @@ public class Endereco implements Serializable{
     @ManyToOne
     @JoinColumn(name = "pessoa_id")
     private Pessoa pessoaId;
+
+    @Column(name = "enderecoPrincipal")
+    private Boolean enderecoPrincipal;
+
+
 
 }

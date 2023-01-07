@@ -28,4 +28,7 @@ public class EnderecoDto {
 
     @NotNull
     private Pessoa pessoaId;
+
+    @NotNull
+    private Boolean enderecoPrincipal;
 }
