@@ -20,9 +20,9 @@ Uma Pessoa deve ter os seguintes campos:
   •	Nome
   •	Data de nascimento
   •	Endereço:
-    o	Logradouro
-    o	CEP
-    o	Número
-    o	Cidade
+    Logradouro-
+    CEP-
+    Número-
+    Cidade
 
 
